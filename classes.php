@@ -9,10 +9,11 @@
 
         public function priceCar()
         {
-            if($this->automatedGearbox == 1) {
+            if ($this->automatedGearbox == 1) {
                 return "Цена " . $this->brand . " с АТ: " . $this->price*1.8 . "$";
-            } else
+            } else {
                 return $this->price;
+            }
         }
     }
     $carAudi = new Car();
@@ -47,7 +48,8 @@
 
         public function totalPrice()
         {
-            if(($this->brand == "Sumsung" && $this->diagonal >= 1.1 && $this->displayResolution == "4k") || ($this->brand == "LG" && $this->diagonal >= 1.1 && $this->displayResolution == "4k")) {
+            if (($this->brand == "Sumsung" && $this->diagonal >= 1.1 && $this->displayResolution == "4k") ||
+                ($this->brand == "LG" && $this->diagonal >= 1.1 && $this->displayResolution == "4k")) {
                 return  100500;
             }
             return 35000;
@@ -95,7 +97,7 @@
 
         public function count_color()
         {
-            if(self::$count <= 1) {
+            if (self::$count <= 1) {
                 return "Duck is white" . "<br>";
             } else {
                 return "Duck is grey" . "<br>";
@@ -121,7 +123,7 @@
         public function getProducts()
         {
             $this->price = ($this->shirt * $this->shirtPrice) + ($this->jeans * $this->jeansPrice);
-            if($this->price >= 15000) {
+            if ($this->price >= 15000) {
                 $this->price = ($this->price - ($this->price/100)*15);
                 return $this->brand . ": " . $this->price;
             }
